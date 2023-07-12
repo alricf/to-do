@@ -1,11 +1,22 @@
-import React from "react";
-import { IState as IProps } from "../App";
+import React, { useState } from "react";
+import { IState as Props } from "../App";
 
-const ToDoList: React.FC<IProps> = ({ toDoList }) => {
-  let count = 0;
+interface IProps {
+  toDoList: Props["toDoList"],
+  setToDoList: React.Dispatch<React.SetStateAction<Props["toDoList"]>>;
+}
+
+const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }) => {
+
   const renderToDoList = (): JSX.Element[] => {
-    return toDoList.map((item) => {
-      return (<li className="List-item" key={count++}>{item.name}</li>);
+
+    return toDoList.map((item: any, index: number) => {
+      return (
+        <>
+          <li key={index}>{item.name}</li>
+          <input name="complete" type="checkbox"/>
+        </>
+      );
     });
   };
   return (
