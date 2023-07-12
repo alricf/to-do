@@ -6,6 +6,7 @@ import ToDoList from './components/ToDoList';
 export interface IState {
   toDoList: {
     name: string,
+    complete: boolean
   }[];
 }
 
@@ -13,7 +14,12 @@ function App() {
 
   const [toDoList, setToDoList] = useState<IState["toDoList"]>([
     {
-      name: "Sweep the floor."
+      name: "Sweep the floor.",
+      complete: false
+    },
+    {
+      name: "Cut the grass",
+      complete: false
     }
   ]);
 
@@ -22,6 +28,7 @@ function App() {
       <AddToDo />
       <ToDoList 
         toDoList={toDoList}
+        setToDoList={setToDoList}
       />
     </div>
   );
