@@ -10,6 +10,7 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
 
   return (
     <>
+    <textarea placeholder="Enter new to-do task" />
     </>
   );
 };
