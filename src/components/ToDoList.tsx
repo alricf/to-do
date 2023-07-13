@@ -9,19 +9,19 @@ interface IProps {
 const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }) => {
 
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    let arr = toDoList.filter((i: any) => {
-      return i.id !== parseInt(e.currentTarget.name);
+    let updatedToDoList = toDoList.filter((taskObj) => {
+      return taskObj.id !== parseInt(e.currentTarget.name);
     });
-    setToDoList(arr);
+    setToDoList(updatedToDoList);
   };
 
   const renderToDoList = (): JSX.Element[] => {
-    return toDoList.map((item: any) => {
+    return toDoList.map((taskObj) => {
       return (
         <>
-          <li key={item.id}>{item.name}</li>
+          <li key={taskObj.id}>{taskObj.name}</li>
           <input name="complete" type="checkbox" />
-          <button name={item.id} onClick={handleDelete}>Delete</button>
+          <button name={taskObj.id.toString()} onClick={handleDelete}>Delete</button>
         </>
       );
     });
