@@ -16,13 +16,15 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }) => {
   };
 
   const renderToDoList = (): JSX.Element[] => {
-    return toDoList.map((taskObj) => {
+    return toDoList.map((taskObj, index: number) => {
       return (
-        <>
-          <li key={taskObj.id}>{taskObj.name}</li>
+        <li key={index}>
+          {taskObj.name}
           <input name="complete" type="checkbox" />
-          <button name={taskObj.id.toString()} onClick={handleDelete}>Delete</button>
-        </>
+          <button name={taskObj.id.toString()} onClick={handleDelete}>
+            Delete
+          </button>
+        </li>
       );
     });
   };
