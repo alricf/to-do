@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { IState as Props } from "../App";
 
 interface IProps {
@@ -9,16 +9,17 @@ interface IProps {
 const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }) => {
 
   const renderToDoList = (): JSX.Element[] => {
-
-    return toDoList.map((item: any, index: number) => {
+    return toDoList.map((item: any) => {
       return (
         <>
-          <li key={index}>{item.name}</li>
+          <li key={item.id}>{item.name}</li>
           <input name="complete" type="checkbox"/>
+          <button name={item.id} onClick={handleDelete}>Delete</button>
         </>
       );
     });
   };
+
   return (
     <ul>
       {renderToDoList()}
