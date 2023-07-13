@@ -6,7 +6,7 @@ export interface IState {
   toDoList: {
     id: number,
     name: string,
-    complete: boolean
+    complete: boolean;
   }[];
 }
 
@@ -27,8 +27,11 @@ function App() {
 
   return (
     <div className="App">
-      <AddToDo />
-      <ToDoList 
+      <AddToDo
+        toDoList={toDoList}
+        setToDoList={setToDoList}
+      />
+      <ToDoList
         toDoList={toDoList}
         setToDoList={setToDoList}
       />
