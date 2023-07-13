@@ -6,7 +6,7 @@ interface IProps {
   setToDoList: React.Dispatch<React.SetStateAction<Props["toDoList"]>>
 }
 
-const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): any => {
+const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
 
   return (
     <>
