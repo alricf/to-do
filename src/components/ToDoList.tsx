@@ -6,7 +6,7 @@ interface IProps {
   setToDoList: React.Dispatch<React.SetStateAction<Props["toDoList"]>>;
 }
 
-const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }) => {
+const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
 
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
     let updatedToDoList = toDoList.filter((taskObj) => {
