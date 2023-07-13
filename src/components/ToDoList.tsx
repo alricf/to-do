@@ -8,7 +8,7 @@ interface IProps {
 
 const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }) => {
 
-  const handleDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
     let updatedToDoList = toDoList.filter((taskObj) => {
       return taskObj.id !== parseInt(e.currentTarget.name);
     });
