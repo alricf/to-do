@@ -1,7 +1,9 @@
+// Imports
 import React, { useState } from 'react';
 import './App.css';
 import AddToDo from './components/AddToDo';
 import ToDoList from './components/ToDoList';
+
 export interface IState {
   toDoList: {
     id: number,
@@ -10,8 +12,10 @@ export interface IState {
   }[];
 }
 
+// Functional component
 function App() {
 
+  // Hooks
   const [toDoList, setToDoList] = useState<IState["toDoList"]>([
     {
       id: 1,
@@ -25,6 +29,7 @@ function App() {
     }
   ]);
 
+  // Template
   return (
     <div className="App">
       <AddToDo
