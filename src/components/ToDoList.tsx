@@ -9,8 +9,8 @@ interface IProps {
 const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
 
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
-    let updatedToDoList = toDoList.filter((taskObj) => {
-      return taskObj.id !== parseInt(e.currentTarget.name);
+    let updatedToDoList = toDoList.filter((taskObj, index: number) => {
+      return index !== parseInt(e.currentTarget.name);
     });
     setToDoList(updatedToDoList);
   };
@@ -21,7 +21,7 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
         <li key={index}>
           {taskObj.name}
           <input name="complete" type="checkbox" />
-          <button name={taskObj.id.toString()} onClick={handleDelete}>
+          <button name={index.toString()} onClick={handleDelete}>
             Delete
           </button>
         </li>
@@ -29,6 +29,7 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
     });
   };
 
+  // Template
   return (
     <ul>
       {renderToDoList()}
