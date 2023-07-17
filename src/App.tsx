@@ -1,5 +1,5 @@
 // Imports
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import AddToDo from './components/AddToDo';
 import ToDoList from './components/ToDoList';
@@ -28,6 +28,10 @@ function App() {
       complete: false
     }
   ]);
+
+  useEffect(() => {
+    console.log(toDoList)
+  },[toDoList])
 
   // Template
   return (
