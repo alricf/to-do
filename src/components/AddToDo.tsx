@@ -14,6 +14,22 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
     setNewTaskInput(e.target.value);
   };
 
+  const handleClick = () => {
+    interface newTaskObj {
+      id: number,
+      name: string,
+      complete: boolean;
+    }
+
+    const newTaskObj = {
+      id: toDoList.length + 1,
+      name: newTaskInput,
+      complete: false
+    };
+
+    setToDoList((prevState) => ([ ...prevState, newTaskObj ]));
+  };
+
   return (
     <>
       <textarea
@@ -22,6 +38,7 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
         onChange={handleChange}
         name="new-task"
       />
+      <button onClick={handleClick}>Add To-Do</button>
     </>
   );
 };
