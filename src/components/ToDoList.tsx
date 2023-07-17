@@ -36,6 +36,9 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
           <button name={taskObj.id.toString()} onClick={handleDelete}>
             Delete
           </button>
+          <button name={taskObj.id.toString()} onClick={handleEdit}>
+            Edit
+          </button>
         </li>
       );
     });
