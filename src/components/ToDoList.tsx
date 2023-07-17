@@ -13,14 +13,14 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
   }, [toDoList]);
 
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
-    let updatedToDoList = toDoList.filter((taskObj, index: number) => {
+    let updatedToDoListDelete = toDoList.filter((taskObj, index: number) => {
       return taskObj.id !== parseInt(e.currentTarget.name);
     });
-    setToDoList(updatedToDoList);
+    setToDoList(updatedToDoListDelete);
   };
 
   const handleCheck = (e: React.MouseEvent<HTMLInputElement>): void => {
-    let updatedArr = toDoList.map((task) => {
+    let updatedToDoListCompleteCheck = toDoList.map((task) => {
       if (task.id === parseInt(e.currentTarget.name) && e.currentTarget.checked) {
         return { ...task, complete: true };
       } else if (task.id === parseInt(e.currentTarget.name) && !e.currentTarget.checked) {
@@ -28,7 +28,7 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
       }
       return task;
     });
-    setToDoList(updatedArr);
+    setToDoList(updatedToDoListCompleteCheck);
   };
 
   const renderToDoList = (): JSX.Element[] => {
