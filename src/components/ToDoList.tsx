@@ -42,6 +42,13 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
     setEditTask(e.target.value);
   };
 
+  const handleEditSave = (index: number) => {
+    const newToDoListObj = [...toDoList];
+    newToDoListObj[index].name = editTask;
+    setToDoList(newToDoListObj);
+    setEditIndex(null);
+  };
+
   const renderToDoList = (): JSX.Element[] => {
     return toDoList.map((taskObj, index: number) => {
       return (
@@ -53,13 +60,13 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
           </button>
           {editIndex === index ? (
             <>
-            <textarea
-              value={editTask}
-              onChange={handleEditOnChange}
-              name="edit-task"
-            />
-            <button>Save</button>
-            <button onClick={() => {setEditIndex(null)}}>Cancel</button>
+              <textarea
+                value={editTask}
+                onChange={handleEditOnChange}
+                name="edit-task"
+              />
+              <button onClick={() => handleEditSave(index)}>Save</button>
+              <button onClick={() => { setEditIndex(null); }}>Cancel</button>
             </>
           ) : (
             <button name={taskObj.id.toString()} onClick={() => handleEdit(index)}>
