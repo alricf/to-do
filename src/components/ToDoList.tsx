@@ -52,11 +52,15 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
             Delete
           </button>
           {editIndex === index ? (
+            <>
             <textarea
               value={editTask}
               onChange={handleEditOnChange}
               name="edit-task"
             />
+            <button>Save</button>
+            <button>Cancel</button>
+            </>
           ) : (
             <button name={taskObj.id.toString()} onClick={() => handleEdit(index)}>
               Edit
