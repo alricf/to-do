@@ -59,7 +59,7 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
               name="edit-task"
             />
             <button>Save</button>
-            <button>Cancel</button>
+            <button onClick={() => {setEditIndex(null)}}>Cancel</button>
             </>
           ) : (
             <button name={taskObj.id.toString()} onClick={() => handleEdit(index)}>
