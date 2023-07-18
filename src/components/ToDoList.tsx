@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { IState as Props } from "../App";
 
 interface IProps {
@@ -7,6 +7,9 @@ interface IProps {
 }
 
 const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
+
+  const [editTask, setEditTask] = useState("");
+  const [editIndex, setEditIndex] = useState<number | null>(null);
 
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
     let updatedToDoListDelete = toDoList.filter((taskObj, index: number) => {
@@ -27,6 +30,10 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
     setToDoList(updatedToDoListCompleteCheck);
   };
 
+  const handleEdit = (index: number): void => {
+    setEditIndex(index);
+  };
+
   const renderToDoList = (): JSX.Element[] => {
     return toDoList.map((taskObj, index: number) => {
       return (
@@ -36,9 +43,13 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
           <button name={taskObj.id.toString()} onClick={handleDelete}>
             Delete
           </button>
-          <button name={taskObj.id.toString()} onClick={handleEdit}>
-            Edit
-          </button>
+          {editIndex === index ? (
+            <textarea />
+            ) : (
+            <button name={taskObj.id.toString()} onClick={() => handleEdit(index)}>
+              Edit
+            </button>
+            )}
         </li>
       );
     });
