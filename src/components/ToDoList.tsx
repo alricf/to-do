@@ -8,7 +8,7 @@ interface IProps {
 
 const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
 
-  const [editTask, setEditTask] = useState("");
+  const [editTask, setEditTask] = useState<string>("");
   const [editIndex, setEditIndex] = useState<number | null>(null);
 
   useEffect(() => {
