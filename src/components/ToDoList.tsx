@@ -53,7 +53,7 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
     return toDoList.map((taskObj, index: number) => {
       return (
         <li key={index}>
-          {taskObj.name}
+          {`➔ ${taskObj.name}`}
           <input name={taskObj.id.toString()} type="checkbox" onClick={handleCheck} />
           <button name={taskObj.id.toString()} onClick={handleDelete}>
             Delete
