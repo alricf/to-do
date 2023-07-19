@@ -10,3 +10,7 @@ ul {
   align-items: center;
 }
 
+section {
+  display:flex;
+  margin-top: 1.5rem;
+}
