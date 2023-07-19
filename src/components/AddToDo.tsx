@@ -27,11 +27,11 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
       complete: false
     };
 
-    setToDoList((prevState) => ([ ...prevState, newTaskObj ]));
+    setToDoList((prevState) => ([...prevState, newTaskObj]));
   };
 
   return (
-    <>
+    <section>
       <textarea
         placeholder="Enter new to-do task"
         value={newTaskInput}
@@ -39,7 +39,7 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
         name="new-task"
       />
       <button onClick={handleClick}>Add To-Do</button>
-    </>
+    </section>
   );
 };
 
