@@ -8,7 +8,7 @@ interface IProps {
 
 const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
 
-  const [newTaskInput, setNewTaskInput] = useState("");
+  const [newTaskInput, setNewTaskInput] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
     setNewTaskInput(e.target.value);
