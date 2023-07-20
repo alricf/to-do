@@ -13,7 +13,6 @@ ul {
 section {
   margin-top: 1.5rem;
   width: 90vw;
-  height: 33vh;
 }
 
 .new-to-do {
@@ -21,4 +20,13 @@ section {
   flex-direction: column;
   align-items: center;
   background-color: skyblue;
+  height: 33vh;
+}
+
+.to-do-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 66vh;
+  background-color: yellow;
 }
