@@ -80,7 +80,7 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
 
   // Template
   return (
-    <section>
+    <section className="to-do-list">
       <ul>
         {renderToDoList()}
       </ul>
