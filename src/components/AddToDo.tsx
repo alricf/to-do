@@ -31,7 +31,7 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
   };
 
   return (
-    <section>
+    <section className="new-to-do">
       <h1>New To-Do</h1>
       <textarea
         placeholder="Enter new to-do task"
