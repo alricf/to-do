@@ -1,5 +1,5 @@
 // Imports
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import AddToDo from './components/AddToDo';
 import ToDoList from './components/ToDoList';
