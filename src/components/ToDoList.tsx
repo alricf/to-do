@@ -86,7 +86,7 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
           {renderToDoList()}
         </ul>
       ) : (
-        <h1>
+        <h1 id="empty-list">
           To-Do List empty : Add a to-do task
         </h1>
       )}
