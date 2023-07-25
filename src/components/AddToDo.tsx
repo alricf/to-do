@@ -28,6 +28,7 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
     };
 
     setToDoList((prevState) => ([...prevState, newTaskObj]));
+    setNewTaskInput("");
   };
 
   return (
