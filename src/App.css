@@ -37,3 +37,10 @@ ul {
   margin: 2rem;
 }
 
+#empty-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 1.5rem;
+}
