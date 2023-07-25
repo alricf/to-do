@@ -17,9 +17,9 @@ function App() {
 
   // Hooks
   const [toDoList, setToDoList] = useState<IState["toDoList"]>([
-    {
+    /* {
       id: 1,
-      name: "Sweep the floor.",
+      name: "Sweep the floor",
       complete: false
     },
     {
@@ -27,6 +27,7 @@ function App() {
       name: "Cut the grass",
       complete: false
     }
+    */
   ]);
 
   useEffect(() => {
