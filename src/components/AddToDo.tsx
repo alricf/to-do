@@ -14,6 +14,13 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
     setNewTaskInput(e.target.value);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>): void => {
+    if (e.key === "Enter") {
+      handleClick();
+    }
+    return;
+  };
+
   const handleClick = () => {
     interface newTaskObj {
       id: number,
@@ -39,6 +46,7 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
         value={newTaskInput}
         onChange={handleChange}
         name="new-task"
+        onKeyDown={handleKeyDown}
       />
       <button onClick={handleClick}>Add To-Do</button>
     </section>
