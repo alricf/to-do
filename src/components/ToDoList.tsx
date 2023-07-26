@@ -54,10 +54,14 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
       return (
         <li key={index}>
           {`➔ ${taskObj.name}`}
-          <input
-            name={taskObj.id.toString()}
-            type="checkbox"
-            onClick={handleCheck} />
+          {
+            editIndex === null &&
+            <input
+              name={taskObj.id.toString()}
+              type="checkbox"
+              onClick={handleCheck}
+            />
+          }
           {
             taskObj.complete === true &&
             <button name={taskObj.id.toString()} onClick={handleDelete}>
