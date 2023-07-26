@@ -16,6 +16,7 @@ const AddToDo: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>): void => {
     if (e.key === "Enter") {
+      e.preventDefault();
       handleClick();
     }
     return;
