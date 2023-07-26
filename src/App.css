@@ -24,6 +24,16 @@ section {
   height: 33vh;
 }
 
+.new-task-textarea {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 0.5rem;
+}
+.new-task-textarea::placeholder {
+  color: black;
+  text-align: center;
+}
+
 .to-do-list {
   display: flex;
   flex-direction: column;
