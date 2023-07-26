@@ -64,7 +64,7 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
               Delete
             </button>
           }
-          {editIndex === index ? (
+          {((editIndex === index) && (taskObj.complete === false)) && (
             <>
               <textarea
                 value={editTask}
@@ -74,7 +74,8 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
               <button onClick={() => handleEditSave(index)}>Save</button>
               <button onClick={() => { setEditIndex(null); }}>Cancel</button>
             </>
-          ) : (
+          )}
+          {((editIndex === null) && (taskObj.complete === false)) && (
             <button name={taskObj.id.toString()} onClick={() => handleEdit(index)}>
               Edit
             </button>
