@@ -1,9 +1,3 @@
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
 .App {
   display: flex;
   flex-direction: column;
@@ -43,14 +37,34 @@ section {
   margin-bottom: 1.5rem;
 }
 
-ul {
-  margin: 2rem;
-}
-
 #empty-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
   margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.edit-task {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.edit-task button {
+  margin-left: 1rem;
 }
