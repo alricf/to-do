@@ -93,9 +93,12 @@ const ToDoList: React.FC<IProps> = ({ toDoList, setToDoList }): JSX.Element => {
   return (
     <section className="to-do-list">
       {toDoList.length > 0 ? (
-        <ul>
-          {renderToDoList()}
-        </ul>
+        <>
+          <h1>To-Do List</h1>
+          <ul>
+            {renderToDoList()}
+          </ul>
+        </>
       ) : (
         <h1 id="empty-list">
           To-Do List empty : Add a to-do task
