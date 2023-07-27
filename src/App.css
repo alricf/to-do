@@ -18,6 +18,10 @@ section {
   height: 33vh;
 }
 
+.new-to-do button {
+  margin-bottom: 1rem;
+}
+
 .new-task-textarea {
   width: 50%;
   height: 50%;
