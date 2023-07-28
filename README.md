@@ -1,3 +1,6 @@
+# To-Do Application
+An application used to keep track of tasks that need to be done to stay organized and use one's time efficiently.
+
 ### `npm start`
 
 Runs the app in the development mode.\
