@@ -1,6 +1,9 @@
 # To-Do Application
 An application used to keep track of tasks that need to be done to stay organized and use one's time efficiently.
 
+## Purpose
+This application is built to learn TypeScript with a practical project.
+
 ## Tech Stack
 - TypeScript
 - React
